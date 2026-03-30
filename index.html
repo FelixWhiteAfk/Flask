@@ -1,0 +1,482 @@
+{% extends 'base.html' %}
+
+{% block title %}HypePC - Готовые компьютерные сборки с гарантией{% endblock %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">МОЩНЫЕ ИГРОВЫЕ</span>
+                <span class="title-line accent-text">КОМПЬЮТЕРЫ</span>
+                <span class="title-line">С ГАРАНТИЕЙ</span>
+            </h1>
+            <p class="hero-subtitle">Готовые сборки и кастомные ПК для игр, работы и творчества. Собери свою мечту!</p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn-primary">
+                    <span>🎮</span> Смотреть каталог
+                </a>
+                <a href="#contacts" class="btn-secondary">
+                    <span>💬</span> Бесплатная консультация
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Собранных ПК</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3 года</span>
+                    <span class="stat-label">Гарантии</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Поддержка</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-particles"></div>
+</section>
+
+<!-- Каталог -->
+<section class="catalog section" id="catalog">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">🔥 Популярные сборки</h2>
+            <p class="section-subtitle">Выберите готовое решение или закажите индивидуальную сборку</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Товар 1 -->
+            <div class="product-card" data-tilt>
+                <div class="product-badge">ХИТ</div>
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/1pk.png') }}" alt="Gaming PC Start" class="product-img">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view" onclick="openModal()">Быстрый заказ</button>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Gaming PC "Start" Black</h3>
+                    <p class="product-desc">Идеальный выбор для начинающих геймеров. RTX 3060 потянет все современные игры на высоких настройках.</p>
+                    <table class="specs-table">
+                        <tr>
+                            <td><span class="spec-icon">⚙️</span> Процессор</td>
+                            <td><strong>Intel Core i5-12400F</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">🎮</span> Видеокарта</td>
+                            <td><strong>RTX 3060 12GB</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💾</span> ОЗУ</td>
+                            <td><strong>16 GB DDR4</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💿</span> Накопитель</td>
+                            <td><strong>512 GB SSD</strong></td>
+                        </tr>
+                    </table>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-label">от</span>
+                            <span class="price-value">85 000 ₽</span>
+                        </div>
+                        <button class="btn-buy" onclick="openModal()">Заказать</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 2 -->
+            <div class="product-card" data-tilt>
+                <div class="product-badge popular">TОП</div>
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/2pk.png') }}" alt="Gaming PC Pro" class="product-img">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view" onclick="openModal()">Быстрый заказ</button>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Gaming PC "Pro" White</h3>
+                    <p class="product-desc">Мощная сборка для игр в 2K. RGB подсветка, топовое охлаждение и запас производительности на годы.</p>
+                    <table class="specs-table">
+                        <tr>
+                            <td><span class="spec-icon">⚙️</span> Процессор</td>
+                            <td><strong>Intel Core i7-13700KF</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">🎮</span> Видеокарта</td>
+                            <td><strong>RTX 4070 Ti 12GB</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💾</span> ОЗУ</td>
+                            <td><strong>32 GB DDR5</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💿</span> Накопитель</td>
+                            <td><strong>1 TB NVMe SSD</strong></td>
+                        </tr>
+                    </table>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-label">от</span>
+                            <span class="price-value">185 000 ₽</span>
+                        </div>
+                        <button class="btn-buy" onclick="openModal()">Заказать</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Товар 3 -->
+            <div class="product-card" data-tilt>
+                <div class="product-badge popular">TOП</div>
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/3pk.png') }}" alt="Gaming PC Pro" class="product-img">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view" onclick="openModal()">Быстрый заказ</button>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Gaming PC "Pro" White</h3>
+                    <p class="product-desc">Мощная сборка для игр в 2K. RGB подсветка, топовое охлаждение и запас производительности на годы.</p>
+                    <table class="specs-table">
+                        <tr>
+                            <td><span class="spec-icon">⚙️</span> Процессор</td>
+                            <td><strong>Intel Core i7-13700KF</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">🎮</span> Видеокарта</td>
+                            <td><strong>RTX 4070 Ti 12GB</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💾</span> ОЗУ</td>
+                            <td><strong>32 GB DDR5</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💿</span> Накопитель</td>
+                            <td><strong>1 TB NVMe SSD</strong></td>
+                        </tr>
+                    </table>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-label">от</span>
+                            <span class="price-value">185 000 ₽</span>
+                        </div>
+                        <button class="btn-buy" onclick="openModal()">Заказать</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Товар 4 -->
+            <div class="product-card" data-tilt>
+                <div class="product-badge popular">TOП</div>
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/4pk.png') }}" alt="Gaming PC Pro" class="product-img">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view" onclick="openModal()">Быстрый заказ</button>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Gaming PC "Pro" White</h3>
+                    <p class="product-desc">Мощная сборка для игр в 2K. RGB подсветка, топовое охлаждение и запас производительности на годы.</p>
+                    <table class="specs-table">
+                        <tr>
+                            <td><span class="spec-icon">⚙️</span> Процессор</td>
+                            <td><strong>Intel Core i7-13700KF</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">🎮</span> Видеокарта</td>
+                            <td><strong>RTX 4070 Ti 12GB</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💾</span> ОЗУ</td>
+                            <td><strong>32 GB DDR5</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💿</span> Накопитель</td>
+                            <td><strong>1 TB NVMe SSD</strong></td>
+                        </tr>
+                    </table>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-label">от</span>
+                            <span class="price-value">185 000 ₽</span>
+                        </div>
+                        <button class="btn-buy" onclick="openModal()">Заказать</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Товар 5 -->
+            <div class="product-card" data-tilt>
+                <div class="product-badge premium">PREMIUM</div>
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/5pk.png') }}" alt="Workstation Creator" class="product-img">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view" onclick="openModal()">Быстрый заказ</button>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Workstation "Creator" Grey</h3>
+                    <p class="product-desc">Профессиональная рабочая станция для рендеринга, монтажа и 3D моделирования.</p>
+                    <table class="specs-table">
+                        <tr>
+                            <td><span class="spec-icon">⚙️</span> Процессор</td>
+                            <td><strong>AMD Ryzen 9 7950X</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">🎮</span> Видеокарта</td>
+                            <td><strong>RTX 4080 16GB</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💾</span> ОЗУ</td>
+                            <td><strong>64 GB DDR5</strong></td>
+                        </tr>
+                        <tr>
+                            <td><span class="spec-icon">💿</span> Накопитель</td>
+                            <td><strong>2 TB NVMe SSD</strong></td>
+                        </tr>
+                    </table>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="price-label">от</span>
+                            <span class="price-value">320 000 ₽</span>
+                        </div>
+                        <button class="btn-buy" onclick="openModal()">Заказать</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Преимущества -->
+<section class="features section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">💎 Почему выбирают нас</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Гарантия 3 года</h3>
+                <p>Полная гарантия на все комплектующие и сборку</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Быстрая сборка</h3>
+                <p>От 1 дня при наличии комплектующих на складе</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Доставка по РФ</h3>
+                <p>Бережная упаковка и страховка груза</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3>Тестирование</h3>
+                <p>48 часов стресс-тестов перед отправкой</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Рассрочка 0%</h3>
+                <p>До 12 месяцев без переплат и первоначального взноса</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎁</div>
+                <h3>Подарки</h3>
+                <p>Игровая мышь и коврик в подарок к каждому ПК</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Услуги -->
+<section class="services section" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">🛠️ Наши услуги</h2>
+            <p class="section-subtitle">Полный спектр услуг по работе с ПК</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-item">
+                <span class="service-number">01</span>
+                <h3>Продажа готовых сборок</h3>
+                <p>Оптимальные конфигурации под любые задачи и бюджет</p>
+            </div>
+            <div class="service-item">
+                <span class="service-number">02</span>
+                <h3>Индивидуальная сборка</h3>
+                <p>Подберем комплектующие под ваши требования</p>
+            </div>
+            <div class="service-item">
+                <span class="service-number">03</span>
+                <h3>Апгрейд компьютеров</h3>
+                <p>Модернизация существующих систем</p>
+            </div>
+            <div class="service-item">
+                <span class="service-number">04</span>
+                <h3>Настройка ПО</h3>
+                <p>Установка Windows, драйверов и программ</p>
+            </div>
+            <div class="service-item">
+                <span class="service-number">05</span>
+                <h3>Trade-in</h3>
+                <p>Обмен старого ПК на новый с доплатой</p>
+            </div>
+            <div class="service-item">
+                <span class="service-number">06</span>
+                <h3>Корпоративное обслуживание</h3>
+                <p>Комплексное оснащение офисов</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- О компании -->
+<section class="about section" id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">🏢 О компании HypePC</h2>
+                <p>Мы занимаемся профессиональной сборкой игровых и рабочих компьютеров с 2020 года. За это время собрали более 500 ПК для клиентов по всей России.</p>
+                <p>Каждый компьютер проходит 48-часовое тестирование под нагрузкой перед отправкой. Мы даем честную гарантию 3 года на все комплектующие и работу.</p>
+
+                <div class="about-features">
+                    <div class="about-feature">
+                        <span class="check">✓</span>
+                        <span>Только оригинальные комплектующие</span>
+                    </div>
+                    <div class="about-feature">
+                        <span class="check">✓</span>
+                        <span>Профессиональная кабель-менеджмент</span>
+                    </div>
+                    <div class="about-feature">
+                        <span class="check">✓</span>
+                        <span>Бесплатная доставка по Москве</span>
+                    </div>
+                    <div class="about-feature">
+                        <span class="check">✓</span>
+                        <span>Техническая поддержка 24/7</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="{{ url_for('static', filename='images/6pk.png') }}" alt="О компании HypePC">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Отзывы -->
+<section class="reviews section" id="reviews">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">💬 Отзывы клиентов</h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">АМ</div>
+                    <div class="review-info">
+                        <h4>Алексей М.</h4>
+                        <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p>"Заказывал Gaming PC Pro. Сборка огонь! Всё пришло в идеальной упаковке, настроили и протестировали. Играю в Cyberpunk 2077 на ультрах без лагов. Рекомендую!"</p>
+                <span class="review-date">15 марта 2024</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">ДК</div>
+                    <div class="review-info">
+                        <h4>Дмитрий К.</h4>
+                        <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p>"Брал рабочую станцию для 3D моделирования. Ребята помогли подобрать оптимальную конфигурацию под Blender и Cinema 4D. Рендерит в разы быстрее старого компа. Спасибо!"</p>
+                <span class="review-date">10 марта 2024</span>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">ОО</div>
+                    <div class="review-info">
+                        <h4>ООО "ТехноСтарт"</h4>
+                        <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p>"Заказали 10 офисных компьютеров. Всё сделали в срок, настроили сеть и ПО. Отличное соотношение цены и качества. Будем сотрудничать дальше."</p>
+                <span class="review-date">5 марта 2024</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>🎯 Не нашли подходящую сборку?</h2>
+            <p>Мы соберем ПК мечты именно под ваши задачи и бюджет!</p>
+            <button class="btn-primary btn-large" onclick="openModal()">
+                <span></span> Бесплатная консультация
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Контакты -->
+<section class="contact-section section" id="contacts">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">📞 Свяжитесь с нами</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-block">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <h4>Телефон</h4>
+                        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:info@hypepc.ru">info@hypepc.ru</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <h4>Адрес</h4>
+                        <span>г. Москва, ул. Техническая, 15</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🕐</span>
+                    <div>
+                        <h4>Режим работы</h4>
+                        <span>Пн-Вс: 10:00 - 20:00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-block">
+                <form action="/callback" method="POST" class="contact-form">
+                    <h3>Остались вопросы?</h3>
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Ваше имя" required>
+                        <input type="tel" name="phone" placeholder="Телефон" required>
+                    </div>
+                    <input type="email" name="email" placeholder="Email">
+                    <textarea name="message" rows="4" placeholder="Ваш вопрос..." required></textarea>
+                    <button type="submit" class="btn-primary btn-full">Отправить сообщение</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
